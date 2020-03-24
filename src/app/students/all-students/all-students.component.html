@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Students</title>
+</head>
+<body>
+    <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Image</th>
+            <th scope="col">Name</th>
+            <th scope="col">GPA</th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let student of students">
+            <th scope="row">{{student.id}}</th>
+            <td><img src = "{{student.imgsrc}}" width="150px" height="150px"></td>
+            <td>{{student.name}}</td>
+            <td>{{student.gpa}}</td>
+            <td>
+                <button class="btn btn-outline-primary btn-sm"  [routerLink]="[ '/student', student.id , 'edit' ]">
+                    Edit
+                  </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+</body>
+</html>

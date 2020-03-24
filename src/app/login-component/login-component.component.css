@@ -1,0 +1,15 @@
+.wrapp{
+    display: flex;
+    justify-content: center;
+    height: 70vh;
+    width: 70vw;
+    background-color:#D3D3D3;
+    margin-left: 15%;
+    margin-top: 3%;
+    padding-top: 5%;
+
+}
+
+body{
+    background-color: white;
+}

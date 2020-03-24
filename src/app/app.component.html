@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Portal</title>
+  <header class="navigation">
+  </header>
+</head>
+<body>
+  <nav>
+    <img src="https://i2.wp.com/southpawer.com/wp-content/uploads/2019/03/cropped-icon-sp.png?ssl=1" class="logo">
+    <ul>
+      <li><a routerLink="/student" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">All Students</a> </li>
+      <li><a routerLink="/student/add" routerLinkActive="active" >Add Student</a></li>
+      <li *ngIf="!isLoggedIn()"><a routerLink="/login" routerLinkActive="active" (click)="logingin()" >Login</a></li>
+      <li *ngIf="isLoggedIn()"><a routerLink="/login" routerLinkActive="active" (click)="logingout()" >logout</a></li>
+    </ul>
+  </nav>
+
+  <br>
+
+  <router-outlet></router-outlet>
+  
+
+</body>
+</html>

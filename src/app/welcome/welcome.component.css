@@ -1,0 +1,21 @@
+body{
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+.container{
+    display: flex;
+    height: 80vh;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+p{
+    font-size: 50px;
+}
+
+img{
+    height: 300px;
+    width: 500px;
+}

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Student</title>
+</head>
+
+<body>
+    <div class="card card-outline-secondary containerr">
+        <div class="card-header">
+            <h3 class="mb-0">User Information</h3>
+        </div>
+        <div class="card-body">
+            <form autocomplete="off" class="form"
+             novalidate
+            (ngSubmit)="save()"
+            [formGroup] = "studentForm">
+                <div class="form-group row">
+                    <label class="col-lg-3 col-form-label form-control-label">ID</label>
+                    <div class="col-lg-9">
+                        <input class="form-control" type="text" formControlName = "id">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-lg-3 col-form-label form-control-label">Name</label>
+                    <div class="col-lg-9">
+                        <input class="form-control" type="text" formControlName = "name" [ngClass]="{'is-invalid': NameMessage}">
+                        <span class="invalid-feedback"> {{NameMessage}}</span>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-lg-3 col-form-label form-control-label">GPA</label>
+                    <div class="col-lg-9">
+                        <input class="form-control" type="text" formControlName = "gpa" [ngClass]="{'is-invalid': GPAMessage}" >
+                        <span class="invalid-feedback"> {{GPAMessage}}</span>
+                    </div>
+
+                </div>
+                <div class="form-group row">
+                    <label class="col-lg-3 col-form-label form-control-label">Image URL</label>
+                    <div class="col-lg-9">
+                        <input class="form-control" type="text" formControlName = "imgsrc" [ngClass]="{'is-invalid': ImageMessage}">
+                        <span class="invalid-feedback"> {{ImageMessage}}</span>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-lg-3 col-form-label form-control-label"></label>
+                    <div class="col-lg-9">
+                        <input class="btn btn-secondary spacee" type="reset" value="Cancel" routerLink="/student">
+                        <input class="btn btn-primary" type="submit" value="Save Changes" [disabled]="!studentForm.valid">
+                        <button type="button" class="btn btn-danger spaces" (click)="delete()">Delete</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div><!-- /form user info -->
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <span class="anchor" id="formContact"></span>
+            <hr class="my-5">
+        </div>
+    </div>
+</body>
+
+</html>
